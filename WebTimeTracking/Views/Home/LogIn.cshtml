@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Logowanie";
+}
+<div class="container">
+    <div class="p-2 pt-md-5 mx-auto text-center">
+        <h1 class="font-weight-bold">Zaloguj sie do swojego konta</h1>
+    </div>
+
+    <div class="row">
+        <form class="col-md-4 mx-auto text-center">
+            <div class="form-gropu">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Adres email">
+            </div>
+            <div class="form-group mt-3">
+                <input type="password" class="form-control" id="InputPassword" placeholder="Hasło">
+            </div>
+            <div class="form-check p-2">
+                <input type="checkbox" class="form-check-input" id="renemberMeCheck">
+                <label class="form-check-label" for="renemberMeCheck">Zapamiętaj mnie</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" width="180">Zaloguj się</button>
+            <p>
+                Nie masz jeszcze konta? 
+                <a class="font-weight-bolder" asp-area="" asp-controller="Home" asp-action="Regist">Zarejestruj się</a>
+            </p>
+        </form>
+    </div>
+</div>
