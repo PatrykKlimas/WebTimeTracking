@@ -16,8 +16,10 @@ namespace WebTimeTracking.Data
         {
             _config = config;
         }
-        public DbSet<Person> Person { get; set; }
-        public DbSet<Person> Boss { get; set; }
+        public DbSet<Person> Persons { get; set; }
+        public DbSet<Boss> Bosses { get; set; }
+        public DbSet<TimeTracking> TimeTrackings { get; set; }
+        public DbSet<TimeRecord> TimeRecords { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
