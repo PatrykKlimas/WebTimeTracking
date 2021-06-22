@@ -12,19 +12,20 @@ namespace WebTimeTracking.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PersonId { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Prosze wpisać imię.")]
         public string FirstName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Prosze wpisać nazwisko.")]
         public string LastName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Prosze wpisać email.")]
+        [EmailAddress(ErrorMessage ="Prosze wpisać poprawny e-mail")]
         public string Emial { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Prosze wpisać adres.")]
         public string Address { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Wybierz miasto.")]
         public string City { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Prosze podać kod pocztwoy.")]
         public string PostalCode { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Wybierz kraj.")]
         public string Country { get; set; }
     }
 }

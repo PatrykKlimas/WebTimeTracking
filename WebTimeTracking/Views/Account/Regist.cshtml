@@ -1,5 +1,10 @@
-﻿@{
+﻿@model WebTimeTracking.Models.Person
+@{
     ViewData["Title"] = "Rejestracja";
+}
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }
 <div class="container">
     <div class="p-2 pt-md-4 pb-md-3 mx-auto text-center">
@@ -9,46 +14,53 @@
     <div class="row">
 
         <div class="col-md-8 order-md-1 mx-auto">
-            <form class="needs-validation" action="order.html" method="get" novalidate>
+            <form class="needs-validation" method="post" asp-area="" asp-controller="Account" asp-action="Regist">
+                <div asp-validation-summary="ModelOnly" class="text-danger font-weight-bold"></div>
                 <div class="row">
                     <div class="col-md-6 mb-3 form-group">
                         <label for="firstName">Imie</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="Twoje Imie">
+                        <input asp-for="FirstName" type="text" class="form-control" id="firstName" placeholder="Twoje Imie">
+                        <span asp-validation-for="FirstName" class="text-danger font-weight-bold"></span>
                     </div>
                     <div class="col-md-6 mb-3 form-group">
                         <label for="lastName">Nazwisko</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Twoje Nazwisko">
+                        <input asp-for="LastName" type="text" class="form-control" id="lastName" placeholder="Twoje Nazwisko">
+                        <span asp-validation-for="LastName" class="text-danger font-weight-bold"></span>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="email">Email</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="email" placeholder="Email">
+                        <input asp-for="Emial" type="text" class="form-control" id="email" placeholder="Email">
+                        <span asp-validation-for="Emial" class="text-danger font-weight-bold"></span>
                     </div>
                 </div>
 
                 <div class="mb-3 form-group">
                     <label for="address">Ulica Nr. Domu/Nr. Lokalu</label>
-                    <input type="text" class="form-control" id="address" placeholder="Ulica NN/NN">
+                    <input asp-for="Address" type="text" class="form-control" id="address" placeholder="Ulica NN/NN">
+                    <span asp-validation-for="Address" class="text-danger font-weight-bold"></span>
                 </div>
 
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-md-6 mb-3 form-group">
                             <label for="zip">Koda Pocztowy</label>
-                            <input type="text" class="form-control" id="zip" placeholder="NN-NNN">
+                            <input asp-for="PostalCode" type="text" class="form-control" id="zip" placeholder="NN-NNN">
+                            <span asp-validation-for="PostalCode" class="text-danger font-weight-bold"></span>
                         </div>
                         <div class="col-md-6 mb-3 form-group">
                             <label for="city">Miasto</label>
-                            <input type="text" class="form-control" id="city" placeholder="Miasto">
+                            <input asp-for="City" type="text" class="form-control" id="city" placeholder="Miasto">
+                            <span asp-validation-for="City" class="text-danger font-weight-bold"></span>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-5 mb-3 form-group">
                     <label for="country">Kraj</label>
-                    <select class="custom-select d-block w-100" id="country">
+                    <select asp-for="Country" class="custom-select d-block w-100" id="country">
                         <option value="">Kraj</option>
                         <option>Polska</option>
                         <option>Anglia</option>
@@ -56,6 +68,7 @@
                         <option>Francja</option>
                         <option>Stany Zjednoczone</option>
                     </select>
+                    <span asp-validation-for="Country" class="text-danger font-weight-bold"></span>
                 </div>
 
                 <div class="mb-5">
@@ -65,7 +78,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary btn-lg btn-block mb-3" type="submit">Zarejestruj</button>
+                <input class="btn btn-primary btn-lg btn-block mb-3" type="submit" value="Zarejestruj" />
 
             </form>
         </div>
