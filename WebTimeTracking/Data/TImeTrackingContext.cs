@@ -9,10 +9,10 @@ using WebTimeTracking.Models;
 namespace WebTimeTracking.Data
 {
 
-    public class TImeTrackingContext : DbContext
+    public class TimeTrackingContext : DbContext
     {
         private readonly IConfiguration _config;
-        public TImeTrackingContext(IConfiguration config)
+        public TimeTrackingContext(IConfiguration config)
         {
             _config = config;
         }

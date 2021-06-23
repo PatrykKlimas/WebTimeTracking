@@ -1,4 +1,4 @@
-﻿@model WebTimeTracking.Models.Person
+﻿@model WebTimeTracking.ViewModels.PersonViewModel
 @{
     ViewData["Title"] = "Rejestracja";
 }
@@ -34,6 +34,20 @@
                     <div class="input-group">
                         <input asp-for="Emial" type="text" class="form-control" id="email" placeholder="Email">
                         <span asp-validation-for="Emial" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Hasło</label>
+                    <div class="input-group">
+                        <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password">
+                        <span asp-validation-for="Password" class="text-danger font-weight-bold"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordconfirm">Potwierdź Hasło</label>
+                    <div class="input-group">
+                        <input asp-for="PasswordConfirm" type="password" class="form-control" id="passwordconfirm" placeholder="PasswordConfirm">
+                        <span asp-validation-for="PasswordConfirm" class="text-danger font-weight-bold"></span>
                     </div>
                 </div>
 

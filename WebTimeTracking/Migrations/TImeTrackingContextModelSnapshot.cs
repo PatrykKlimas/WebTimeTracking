@@ -8,8 +8,8 @@ using WebTimeTracking.Data;
 
 namespace WebTimeTracking.Migrations
 {
-    [DbContext(typeof(TImeTrackingContext))]
-    partial class TImeTrackingContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(TimeTrackingContext))]
+    partial class TimeTrackingContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -67,6 +67,10 @@ namespace WebTimeTracking.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

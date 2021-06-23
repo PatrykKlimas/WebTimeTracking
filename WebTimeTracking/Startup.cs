@@ -26,8 +26,9 @@ namespace WebTimeTracking
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<TImeTrackingContext>(options =>
+            services.AddDbContext<TimeTrackingContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("TimeTrackingContextDb")));
+            services.AddScoped<ITrackingRepository, TrackingRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

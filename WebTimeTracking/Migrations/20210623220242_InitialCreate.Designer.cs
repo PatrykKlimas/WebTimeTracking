@@ -9,8 +9,8 @@ using WebTimeTracking.Data;
 
 namespace WebTimeTracking.Migrations
 {
-    [DbContext(typeof(TImeTrackingContext))]
-    [Migration("20210526221237_InitialCreate")]
+    [DbContext(typeof(TimeTrackingContext))]
+    [Migration("20210623220242_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,6 +69,10 @@ namespace WebTimeTracking.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
