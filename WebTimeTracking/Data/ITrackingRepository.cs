@@ -10,5 +10,6 @@ namespace WebTimeTracking.Data
     {
         public void AddPerson(Person person);
         public void SaveAll();
+        public Person GetPersonByID(int id);
     }
 }

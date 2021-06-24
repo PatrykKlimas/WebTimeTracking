@@ -26,7 +26,6 @@ namespace WebTimeTracking.Controllers
                 sValidationMsg = DataValidation.IsPersonValid(ref model);
                 if (sValidationMsg.Equals(string.Empty))
                 {
-
                     Person person = new Person
                     {
                         FirstName = model.FirstName,
@@ -38,8 +37,8 @@ namespace WebTimeTracking.Controllers
                         Country = model.Country,
                         Password = model.Password                        
                     };
-                   // _repository.AddPerson(person);
-                    //_repository.SaveAll();
+                     _repository.AddPerson(person);
+                    _repository.SaveAll();
 
                     return RedirectToAction("Index", "Home");
                 }

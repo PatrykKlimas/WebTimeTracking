@@ -17,6 +17,10 @@ namespace WebTimeTracking.Data
         {
             _ctx.Persons.Add(person);
         }
+        public Person GetPersonByID(int id)
+        {
+            return _ctx.Persons.Where(x => x.PersonId == id).FirstOrDefault();
+        }
 
         public void SaveAll()
         {
